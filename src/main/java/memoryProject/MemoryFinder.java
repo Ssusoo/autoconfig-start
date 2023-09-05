@@ -20,7 +20,7 @@ public class MemoryFinder {
 	}
 
 	/**
-	 * 빈 등록 로그
+	 * 빈 등록할 때 로그
 	 */
 	@PostConstruct
 	public void init() {

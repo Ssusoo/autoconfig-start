@@ -15,7 +15,7 @@ public class MemoryController {
 	@GetMapping("/memory")
 	public Memory system() {
 		Memory memory = memoryFinder.get();
-		log.info("memory={} : " + memory);
+		log.info("memory={} : " + memory); // Memory{used=24333952, max=8589934592}
 		return memory;
 	}
 }
