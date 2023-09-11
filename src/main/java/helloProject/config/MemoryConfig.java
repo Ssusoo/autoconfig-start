@@ -3,6 +3,7 @@ package helloProject.config;
 import memoryProject.MemoryCondition;
 import memoryProject.MemoryController;
 import memoryProject.MemoryFinder;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
@@ -20,7 +21,10 @@ import org.springframework.context.annotation.Configuration;
  *  Conditional의 MemCondition.class가 true면
  *  아래 MemoryConfig 동작한다.
  */
-@Conditional(MemoryCondition.class)
+//@Conditional(MemoryCondition.class)
+// 스프링부트에서 이미 제공하고 있음.
+@ConditionalOnProperty(name = "memory", havingValue = "on") // true
+//@ConditionalOnProperty(name = "memory", havingValue = "xxxx") false
 public class MemoryConfig {
 	/**
 	 * 내부 헬로 프로젝트에서 외부 메모리 프로젝트를 사용하고 싶은 경우
